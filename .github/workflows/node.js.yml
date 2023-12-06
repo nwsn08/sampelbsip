@@ -21,6 +21,14 @@ jobs:
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v3
+
+    - name: Debug
+      run: |
+            echo "Current directory contents:"
+            ls -l
+            echo "Contents of dist directory:"
+            ls -l dist
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
