@@ -2,8 +2,11 @@
 import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  modules: [
+    app: {
+        baseURL: '/sampelbsip/'
+    },
+    devtools: { enabled: true },
+    modules: [
       'nuxt-icon',
       '@nuxtjs/google-fonts',
       async (options, nuxt) => {
@@ -13,7 +16,7 @@ export default defineNuxtConfig({
             }
         )))
       },
-  ],
+    ],
     css:['vuetify/styles'],
     typescript: { shim: false},
     build: { transpile: ['vuetify']},
