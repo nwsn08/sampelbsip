@@ -1,3 +1,6 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
 name: Node.js CI
 
 on:
@@ -12,24 +15,24 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14, 16, 18]  # Add the desired Node.js versions
+        node-version: [18]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
-      # - run: npm test  # You may uncomment this line if you have tests
-      - name: Deploy 🚀
-        run: |
-          mkdir -p dist  # Create the 'dist' directory if it doesn't exist
-          echo "This is a placeholder file." > dist/index.html  # Add a placeholder file if needed
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
+    - name: Checkout 🛎️
+      uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+#    - run: npm test
+    - name: Deploy 🚀
+      run: |
+        mkdir -p dist  # Create the 'dist' directory if it doesn't exist
+        echo "This is a placeholder file." > dist/index.html  # Add a placeholder file if needed
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
