@@ -34,7 +34,7 @@ jobs:
         echo "Current directory contents:"
         ls -l
         echo "Contents of dist directory:"
-        ls -l dist
+        ls -l .nuxt/dist
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
