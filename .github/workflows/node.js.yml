@@ -29,6 +29,15 @@ jobs:
     - run: npm ci
     - run: npm run build
 #    - run: npm test
+    - name: Configure Git
+      run: |
+        git config --global user.name "Sugeng Eko Saputro"
+        git config --global user.email "sugengekosaputro96@gmail.com"
+    - name: Debug Git
+      run: |
+        git status
+        git remote -v
+
     - name: Debug
       run: |
         echo "Current directory contents:"
@@ -39,12 +48,3 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: .nuxt/dist
-    - name: Configure Git
-      run: |
-        git config --global user.name "Sugeng Eko Saputro"
-        git config --global user.email "sugengekosaputro96@gmail.com"
-    - name: Debug Git
-      run: |
-        git status
-        git remote -v
-        
