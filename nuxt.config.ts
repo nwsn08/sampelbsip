@@ -3,7 +3,7 @@ import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
     app: {
-        baseURL: '/sampelbsip/'
+        baseURL: '/'
     },
     devtools: { enabled: true },
     modules: [

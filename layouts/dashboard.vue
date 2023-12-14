@@ -24,7 +24,9 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <div class="pa-16">
+        <slot/>
+      </div>
     </v-main>
   </v-app>
 </template>
@@ -46,6 +48,11 @@ export default {
             icon: 'mdi-chart-bubble',
             title: 'Beranda',
             to: '/dashboard',
+          },
+          {
+            icon: 'mdi-chart-bubble',
+            title: 'Data Penelitian',
+            to: '/dashboard/observation',
           },
           {
             icon: 'mdi-apps',
