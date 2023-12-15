@@ -3,9 +3,9 @@ import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
     app: {
-        baseURL: '/'
+        baseURL: '/sampelbsip'
     },
-    devtools: { enabled: true },
+    devtools: { enabled: false },
     modules: [
       'nuxt-icon',
       '@nuxtjs/google-fonts',
