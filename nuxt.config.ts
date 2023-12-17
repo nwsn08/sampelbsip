@@ -2,22 +2,14 @@
 import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
-    app: {
-        baseURL: '/sampelbsip'
-    },
     devtools: { enabled: false },
     modules: [
-      'nuxt-icon',
       '@nuxtjs/google-fonts',
-      async (options, nuxt) => {
-        nuxt.hooks.hook('vite:extendConfig', config => config.plugins.push(vuetify(
-            {
-                styles: { configFile: "assets/settings.scss"}
-            }
-        )))
-      },
     ],
-    css:['vuetify/styles'],
+    css:[
+        'vuetify/styles/main.sass',
+        '@mdi/font/css/materialdesignicons.css'
+    ],
     typescript: { shim: false},
     build: { transpile: ['vuetify']},
     vite: { ssr: { noExternal: ['vuetify']}},
