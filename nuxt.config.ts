@@ -3,6 +3,7 @@ import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
     devtools: { enabled: false },
+    ssr: false,
     modules: [
       '@nuxtjs/google-fonts',
     ],
