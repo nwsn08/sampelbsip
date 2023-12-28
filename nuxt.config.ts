@@ -12,7 +12,11 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.css'
     ],
     typescript: { shim: false},
-    build: { transpile: ['vuetify']},
+    build: {
+        transpile: ['vuetify'],
+        standalone: true,
+        chunkSizeWarningLimit: 5000,
+    },
     vite: { ssr: { noExternal: ['vuetify']}},
     googleFonts: {
       families: {
